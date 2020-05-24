@@ -28,3 +28,9 @@ input,textarea{
   line-height:20px;
   font-size:20px
 }
+.login-form .error{
+  text-align:center;
+  margin:5px 0;
+  padding:5px 10px;
+  color:#c92c43
+}

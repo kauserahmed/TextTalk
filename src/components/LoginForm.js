@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './TextTalk.png'
+import { VERIFY_USER } from '../Events'
 
 export default class LoginForm extends Component {
 	constructor(props) {
@@ -9,8 +10,32 @@ export default class LoginForm extends Component {
 	  	nickname:"",
 	  	error:""
 	  };
+    }
+    
+    setUser = ({user, isUser})=>{
+
+		if(isUser){
+			this.setError("User name taken")
+		}else{
+			this.setError("")
+			this.props.setUser(user)
+		}
 	}
 
+	handleSubmit = (e)=>{
+		e.preventDefault()
+		const { socket } = this.props
+		const { nickname } = this.state
+		socket.emit(VERIFY_USER, nickname, this.setUser)
+	}
+
+	handleChange = (e)=>{
+		this.setState({nickname:e.target.value})
+	}
+
+	setError = (error)=>{
+		this.setState({error})
+	}
 	
     
     render() {
