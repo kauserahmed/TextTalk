@@ -29,12 +29,29 @@ export default class Layout extends Component {
 		this.setState({socket})
 	}
 
+	setUser = (user)=>{
+		const { socket } = this.state
+		socket.emit(USER_CONNECTED, user);
+		this.setState({user})
+	}
+
+	logout = ()=>{
+		const { socket } = this.state
+		socket.emit(LOGOUT)
+		this.setState({user:null})
+
+	}
+
     render() {
 		const { title } = this.props
+		const { socket, user } = this.state
 		return (
 			<div className="container">
 				{
-                    title
+                   !user ?	
+				   <LoginForm socket={socket} setUser={this.setUser} />
+				   :
+				   <ChatContainer socket={socket} user={user} logout={this.logout}/>
 				}
 			</div>
 		);
