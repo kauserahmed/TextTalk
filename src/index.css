@@ -180,3 +180,46 @@ input,textarea{
   order:2;
   margin-left:25px
 }
+.message-container.right .data{
+  margin-left:0;
+  order:1
+}
+.message-container.right .name{
+  display:none
+}
+.message-container.right .message{
+  background:linear-gradient(  #fd1d1d,   rgb(39, 34, 34));
+  color:#fff;
+  border-top-right-radius:0;
+  border-top-left-radius:5px;
+  text-align: left;
+}
+.typing-user{
+  text-align:right;
+  margin:10px 15px
+}
+.message-input{
+  background:rgb(228, 212, 212);
+  color:#484d79;
+  box-sizing:border-box;
+  height:10vh;
+  max-height:65px
+}
+.message-input .message-form{height:100%;
+  width:100%;
+  display:flex;
+  justify-content:space-between;    
+}
+.message-input .message-form .form-control{
+  padding-top:24px;
+  padding-bottom:24px;
+  resize:none;
+  padding-left:15px;
+  box-sizing:border-box;
+  width:100%;
+  height:100%;
+  border:none;  
+}
+.message-input .message-form .form-control:focus{
+  outline:none
+}
