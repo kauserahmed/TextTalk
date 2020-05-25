@@ -1,8 +1,8 @@
 const io = require('./index.js').io
-const { createUser, createMessage, createChat } = require('../Create')
 const { VERIFY_USER, USER_CONNECTED, USER_DISCONNECTED, 
     LOGOUT, COMMUNITY_CHAT, MESSAGE_RECIEVED, MESSAGE_SENT,
-    TYPING  } = require('../Events')
+	TYPING  } = require('../Events')
+const { createUser, createMessage, createChat } = require('../Factories')
 
 let connectedUsers = { }
 

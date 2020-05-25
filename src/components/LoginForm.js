@@ -39,6 +39,7 @@ export default class LoginForm extends Component {
 	
     
     render() {
+		const { nickname, error } = this.state
         return (
 			<div className="login">
 				
