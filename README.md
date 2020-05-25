@@ -6,6 +6,8 @@
 
 ![App Screenshot 1](./1.png)
 
+![App Screenshot 1](./2.png)
+
 ![App Gif](./v.gif)
 
 
