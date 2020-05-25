@@ -139,4 +139,44 @@ input,textarea{
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
-  color:#b3b2ca;background:#dcddf5}
+  color:#b3b2ca;background:#dcddf5
+}
+.message-container{
+  display:flex;
+  justify-content:flex-start;
+  min-height:0px;
+  margin:10px 15px;
+  animation:.65s ease-out 0s show
+}
+.message-container .time{
+  order:1;
+  font-size:.70em;
+}
+.message-container .data{
+  order:2;
+  height:100%;
+  margin-left:10px
+}
+.message-container .name{
+  font-size:.80em;
+  margin-top:5px;
+  text-align:left
+}
+.message-container .message{
+  background:linear-gradient( #fcb045, #fd1d1d);
+  border-radius:5px;
+  border-top-left-radius:0;
+  box-sizing:border-box;
+  color:black;
+  height:100%;
+  padding:10px 15px;   
+  position:relative}@keyframes show{0%{opacity:0}100%{opacity:1} 
+}
+.message-container.right{
+  text-align:right;
+  justify-content:flex-end
+}
+.message-container.right .time{
+  order:2;
+  margin-left:25px
+}
