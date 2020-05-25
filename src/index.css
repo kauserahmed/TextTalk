@@ -33,4 +33,12 @@ input,textarea{
   margin:5px 0;
   padding:5px 10px;
   color:#c92c43
-} hgfghfg
+} 
+.container{
+  color:rgb(62, 243, 17);
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  height:100%;
+  width:100%
+}
