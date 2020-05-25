@@ -223,3 +223,18 @@ input,textarea{
 .message-input .message-form .form-control:focus{
   outline:none
 }
+.message-input .message-form .send{
+  width:20%;
+  box-sizing:border-box;
+  font-size:1.25em;
+  text-align:center;
+  border:none;
+  height:100%;
+  color:#fff;
+  background:green;
+  transition:all .35s ease-out
+}
+.message-input .message-form .send:disabled{
+  opacity:.2;
+  background:#131314
+}

@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import io from 'socket.io-client'
 import { USER_CONNECTED, LOGOUT } from '../Events'
 import LoginForm from './LoginForm'
-
+import ChatContainer from './ChatContainer'
 
 const socketUrl = "http://localhost:3231"
 export default class Layout extends Component {
