@@ -21,4 +21,16 @@ module.exports = function(socket){
         }
     })
 
+    socket.on(USER_CONNECTED, (user)=>{
+		connectedUsers = addUser(connectedUsers, user)
+		socket.user = user
+
+		sendMessageToChatFromUser = sendMessageToChat(user.name)
+		sendTypingFromUser = sendTypingToChat(user.name)
+
+		io.emit(USER_CONNECTED, connectedUsers)
+		console.log(connectedUsers);
+
+	})
+
 }
