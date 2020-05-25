@@ -47,7 +47,47 @@ module.exports = function(socket){
 		io.emit(USER_DISCONNECTED, connectedUsers)
 		console.log("Disconnect", connectedUsers);
 
+    })
+    
+    socket.on(COMMUNITY_CHAT, (callback)=>{
+		callback(communityChat)
+	})
+
+	socket.on(MESSAGE_SENT, ({chatId, message})=>{
+		sendMessageToChatFromUser(chatId, message)
+	})
+
+	socket.on(TYPING, ({chatId, isTyping})=>{
+		sendTypingFromUser(chatId, isTyping)
 	})
 
 
+}
+
+function sendTypingToChat(user){
+	return (chatId, isTyping)=>{
+		io.emit(`${TYPING}-${chatId}`, {user, isTyping})
+	}
+}
+
+function sendMessageToChat(sender){
+	return (chatId, message)=>{
+		io.emit(`${MESSAGE_RECIEVED}-${chatId}`, createMessage({message, sender}))
+	}
+}
+
+function addUser(userList, user){
+	let newList = Object.assign({}, userList)
+	newList[user.name] = user
+	return newList
+}
+
+function removeUser(userList, username){
+	let newList = Object.assign({}, userList)
+	delete newList[username]
+	return newList
+}
+
+function isUser(userList, username){
+    return username in userList
 }
